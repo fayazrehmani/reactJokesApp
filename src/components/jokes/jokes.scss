@@ -1,0 +1,62 @@
+@import '../../assets/scss/mixins';
+@import '../../assets/scss/variables';
+
+@keyframes rotate {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+.loading-joke {
+  margin: 20px;
+  padding: 20px;
+  background: transparent;
+  color: rgb(221, 79, 13);
+  text-align: center;
+  font-weight: 600;
+
+  .fa.fa-circle-o-notch {
+    color: $color-card-bg-hover;
+    animation: rotate 2s infinite linear;
+  }
+}
+
+.joke-card {
+  margin: 50px 0;
+  border: none;
+  @include box-shadow(0 2px 14px rgba(0,0,0,0.25));
+
+  .card-header {
+    padding: 0;
+    background-color: $color-card-bg;
+    .btn-link {
+      display: block;
+      width: 100%;
+      padding: 20px;
+      color: $color-white;
+      @include transition(all ease-in-out 0.4s);
+
+      &:active, &:focus, &:hover {
+        text-decoration: none;
+        box-shadow: none;
+      }
+    }
+
+    &:hover {
+      background-color: $color-card-bg-hover;
+      .btn-link {
+        color: $color-white;
+      }
+    }
+  }
+
+}
+
+.btn-light {
+  @include box-shadow(0 5px 10px rgba(0,0,0,0.35));
+
+  &:hover {
+    background-color: #f8f9fa;
+    color: #212529;
+    box-shadow: none;
+  }
+}
